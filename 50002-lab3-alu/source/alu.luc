@@ -11,7 +11,6 @@ module alu (
     compare compare;
     sig cmp[32];
     boolean boolean;
-    
     always {
         // implement alu logic here
         adder.a = a;
@@ -27,8 +26,7 @@ module alu (
         compare.n = adder.n;
         compare.alufn_signal = alufn_signal;
         cmp = c{31x{b0}, compare.cmp};
-        // out = cmp
-        
+
         boolean.a = a;
         boolean.b = b;
         boolean.alufn_signal = alufn_signal;
