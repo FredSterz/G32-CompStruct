@@ -8,13 +8,9 @@ module alu (
     output n
 ) {
     adder adder(#SIZE(32));
-<<<<<<< Updated upstream
-    
-=======
     compare compare;
     sig cmp[32];
     boolean boolean;
->>>>>>> Stashed changes
     
     always {
         // implement alu logic here
@@ -24,9 +20,6 @@ module alu (
         z = adder.z;
         v = adder.v;
         n = adder.n;
-<<<<<<< Updated upstream
-        out = adder.out;   
-=======
         // out = adder.out;   
         
         compare.z = adder.z;
@@ -40,6 +33,5 @@ module alu (
         boolean.b = b;
         boolean.alufn_signal = alufn_signal;
         out = boolean.bool
->>>>>>> Stashed changes
     }
 }
