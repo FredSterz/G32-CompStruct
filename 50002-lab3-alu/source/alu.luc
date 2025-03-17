@@ -61,6 +61,5 @@ module alu (
             mux_4.s1[i] = alufn_signal[5]
             out[i] = mux_4.out[i]
         }
-
     }
 }
