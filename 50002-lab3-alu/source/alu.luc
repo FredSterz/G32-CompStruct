@@ -38,6 +38,30 @@ module alu (
         shifter.a = a;
         shifter.b = b[4:0];
         shifter.alufn_signal = alufn_signal;
+<<<<<<< Updated upstream
         out = shifter.shift
+=======
+        // out = shifter.shift;
+        
+        multiplier.a = a;
+        multiplier.b = b;
+        
+        repeat(i, 32, 0, 1) {
+            mux_2.in[i][0] = adder.out[i]
+            mux_2.in[i][1] = multiplier.mul[i]
+            mux_2.s0[i] = alufn_signal[1]
+        }
+        
+        repeat(i, 32, 0, 1) {
+            mux_4.in[i][0] = mux_2.out[i]
+            mux_4.in[i][1] = boolean.bool[i]
+            mux_4.in[i][2] = shifter.shift[i]
+            mux_4.in[i][3] = cmp[i]
+            mux_4.s0[i] = alufn_signal[4]
+            mux_4.s1[i] = alufn_signal[5]
+            out[i] = mux_4.out[i]
+        }
+
+>>>>>>> Stashed changes
     }
 }
