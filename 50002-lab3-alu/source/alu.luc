@@ -1,7 +1,7 @@
 module alu (
     input a[32],
     input b[32],
-    input alufn_signal[7],
+    input alufn_signal[8],
     output out[32],
     output z,
     output v,
