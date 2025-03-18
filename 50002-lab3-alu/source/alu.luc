@@ -12,6 +12,9 @@ module alu (
     sig cmp[32];
     boolean boolean;
     compact_shifter shifter;
+    multiplier multiplier;
+    mux_2 mux_2[32];
+    mux_4 mux_4[32];
     
     always {
         // implement alu logic here
@@ -38,9 +41,6 @@ module alu (
         shifter.a = a;
         shifter.b = b[4:0];
         shifter.alufn_signal = alufn_signal;
-<<<<<<< Updated upstream
-        out = shifter.shift
-=======
         // out = shifter.shift;
         
         multiplier.a = a;
@@ -62,6 +62,5 @@ module alu (
             out[i] = mux_4.out[i]
         }
 
->>>>>>> Stashed changes
     }
 }
