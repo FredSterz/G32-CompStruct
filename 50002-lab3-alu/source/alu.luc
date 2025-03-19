@@ -45,7 +45,9 @@ module alu (
         
         abs.a = a;
         abs.b = b;
-        
+        // First mux in diagram. Modified to be 4-input mux to accomodate
+        // for alufn_signal[6], which will give access to
+        // additional function: abs.
             repeat(i, 32, 0, 1) {
                 mux_4a.in[i][0] = adder.out[i];
                 mux_4a.in[i][1] = multiplier.mul[i];
@@ -54,7 +56,7 @@ module alu (
                 mux_4a.s0[i] = alufn_signal[1];
                 mux_4a.s1[i] = alufn_signal[6];
             }
-
+        // second mux in diagram.
             repeat(i, 32, 0, 1) {
                 mux_4b.in[i][0] = mux_4a.out[i];
                 mux_4b.in[i][1] = boolean.bool[i];
