@@ -8,7 +8,7 @@ module compare (
         input wire z,
         input wire v,
         input wire n,
-        input wire [5:0] alufn_signal,
+        input wire [7:0] alufn_signal,
         output reg cmp
     );
     logic M_mux_4_s0;

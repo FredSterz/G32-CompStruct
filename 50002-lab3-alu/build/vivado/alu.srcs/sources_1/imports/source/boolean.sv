@@ -9,7 +9,7 @@ module boolean #(
     ) (
         input wire [(SIZE)-1:0] a,
         input wire [(SIZE)-1:0] b,
-        input wire [5:0] alufn_signal,
+        input wire [7:0] alufn_signal,
         output reg [(SIZE)-1:0] bool
     );
     logic [31:0] M_mux_4_32_s0;
@@ -17,15 +17,15 @@ module boolean #(
     logic [31:0][3:0] M_mux_4_32_in;
     logic [31:0] M_mux_4_32_out;
     
-    genvar idx_0_970552855;
+    genvar idx_0_1392416844;
     
     generate
-        for (idx_0_970552855 = 0; idx_0_970552855 < 32; idx_0_970552855 = idx_0_970552855 + 1) begin: forLoop_idx_0_970552855
+        for (idx_0_1392416844 = 0; idx_0_1392416844 < 32; idx_0_1392416844 = idx_0_1392416844 + 1) begin: forLoop_idx_0_1392416844
             mux_4 mux_4_32 (
-                .s0(M_mux_4_32_s0[idx_0_970552855]),
-                .s1(M_mux_4_32_s1[idx_0_970552855]),
-                .in(M_mux_4_32_in[idx_0_970552855]),
-                .out(M_mux_4_32_out[idx_0_970552855])
+                .s0(M_mux_4_32_s0[idx_0_1392416844]),
+                .s1(M_mux_4_32_s1[idx_0_1392416844]),
+                .in(M_mux_4_32_in[idx_0_1392416844]),
+                .out(M_mux_4_32_out[idx_0_1392416844])
             );
         end
     endgenerate
